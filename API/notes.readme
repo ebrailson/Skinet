@@ -1,0 +1,14 @@
+ --Install Redis---
+ 1-Nuget cmd-  StackExchange.Redis, salvar no Infrascture
+ 2 - Startup -  services.AddSingleton<ConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(_configuration.GetConnectionString("Redis"),
+                true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+3 - AppsettingsDevelopmnet-    "Redis":"localhost"
+4 - Create Class, Repository and Controller
+5 -Install Chocolateu
+6 - Run this command to intall this package [ choco install redis-64 --version 3.0.503] on PowerShell
+7 - redis-server ,redis-cli KEYS '*'
+8 - Stop Redis Server - shutdown

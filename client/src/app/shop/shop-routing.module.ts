@@ -3,16 +3,32 @@ import { NgModule } from '@angular/core';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ShopComponent } from './shop.component';
 
-const route:Routes=[
-    {path:'', component:ShopComponent},
-    {path:':id', component:ProductDetailsComponent, data: {breadcrumb: {alias:'productDetails'}}},
-  ];
- 
-  @NgModule({
+const route: Routes = [
+  { path: '', component: ShopComponent },
+  {
+    path: ':id',
+    component: ProductDetailsComponent,
+    data: { breadcrumb: { alias: 'productDetails' } },
+  },
+];
+
+// const route: Routes = [
+//   {
+//     path: '',
+//     children: [
+//       { path: '', component: ShopComponent },
+//       {
+//         path: ':id',
+//         component: ProductDetailsComponent,
+//         data: { breadcrumb: { alias: 'productDetails' } },
+//       },
+//     ],
+//   },
+// ];
+
+@NgModule({
   declarations: [],
-  imports: [
-    RouterModule.forChild(route)
-  ],
-  exports:[RouterModule]
+  imports: [RouterModule.forChild(route)],
+  exports: [RouterModule],
 })
-export class ShopRoutingModule { }
+export class ShopRoutingModule {}

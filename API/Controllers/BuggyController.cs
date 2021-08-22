@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-
     public class BuggyController : BaseController
     {
         private readonly StoreContext _context;
@@ -15,9 +14,7 @@ namespace API.Controllers
         [HttpGet("notfound")]
         public ActionResult GetNotFoundRequest()
         {
-
             return NotFound(new ApiResponse(404));
-
         }
 
         [HttpGet("servererror")]
@@ -40,7 +37,5 @@ namespace API.Controllers
         {
             return Ok();
         }
-
-
     }
 }

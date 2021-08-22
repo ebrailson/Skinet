@@ -7,11 +7,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Extention
 {
-    public  static class ApplicationServicesExtentions
+    public static class ApplicationServicesExtentions
     {
         public static IServiceCollection AddApplicationServices(IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
+
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
 
             services.Configure<ApiBehaviorOptions>(options =>
